@@ -1,0 +1,117 @@
+:~HCLTech_GenAI_Assignment_Ritik_Sharma$ python3 agent.py 
+{
+  "claim_id": "C001",
+  "employee": "Asha",
+  "decision": "Approve",
+  "approved_amount": 120,
+  "deductions_or_rejected_amount": 0,
+  "missing_documents": [],
+  "policy_references": "Mock Travel Reimbursement Policy",
+  "confidence": "high",
+  "explanation": "Claim aligns with policy.",
+  "agentic_trace": {
+    "prompt": "You are a travel reimbursement approval agent. Review the claim for employee Asha in category transport with amount 120. Use the following tools in this sequence: policy_lookup. Return a concise reasoning summary and a final decision.",
+    "selected_tools": [
+      "policy_lookup"
+    ],
+    "conversation_flow": [
+      "1. Receive claim input",
+      "2. Select relevant tools based on claim context",
+      "3. Gather policy and evidence context",
+      "4. Decide and explain the outcome"
+    ],
+    "reasoning_summary": "Assess policy fit, confirm whether the receipt requirement is satisfied, and determine whether the case should be auto-approved, partially approved, rejected, or sent for manual review."
+  }
+}
+
+{
+  "claim_id": "C002",
+  "employee": "Ravi",
+  "decision": "Manual Review",
+  "approved_amount": 60,
+  "deductions_or_rejected_amount": 25,
+  "missing_documents": [
+    "receipt"
+  ],
+  "policy_references": "Mock Travel Reimbursement Policy",
+  "confidence": "medium",
+  "explanation": "Amount exceeds the meals limit of 60. ; Receipt is required for claims above the threshold. ; Receipt is missing.",
+  "agentic_trace": {
+    "prompt": "You are a travel reimbursement approval agent. Review the claim for employee Ravi in category meals with amount 85. Use the following tools in this sequence: policy_lookup, receipt_completeness_check. Return a concise reasoning summary and a final decision.",
+    "selected_tools": [
+      "policy_lookup",
+      "receipt_completeness_check"
+    ],
+    "conversation_flow": [
+      "1. Receive claim input",
+      "2. Select relevant tools based on claim context",
+      "3. Gather policy and evidence context",
+      "4. Decide and explain the outcome"
+    ],
+    "reasoning_summary": "Assess policy fit, confirm whether the receipt requirement is satisfied, and determine whether the case should be auto-approved, partially approved, rejected, or sent for manual review."
+  }
+}
+
+{
+  "claim_id": "C003",
+  "employee": "Meera",
+  "decision": "Manual Review",
+  "approved_amount": 300,
+  "deductions_or_rejected_amount": 350,
+  "missing_documents": [],
+  "policy_references": "Mock Travel Reimbursement Policy",
+  "confidence": "medium",
+  "explanation": "Amount exceeds the lodging limit of 300. ; Duplicate claim detected. ; Claim exceeds approval threshold and needs senior review.",
+  "agentic_trace": {
+    "prompt": "You are a travel reimbursement approval agent. Review the claim for employee Meera in category lodging with amount 650. Use the following tools in this sequence: policy_lookup, manual_review_check. Return a concise reasoning summary and a final decision.",
+    "selected_tools": [
+      "policy_lookup",
+      "manual_review_check"
+    ],
+    "conversation_flow": [
+      "1. Receive claim input",
+      "2. Select relevant tools based on claim context",
+      "3. Gather policy and evidence context",
+      "4. Decide and explain the outcome"
+    ],
+    "reasoning_summary": "Assess policy fit, confirm whether the receipt requirement is satisfied, and determine whether the case should be auto-approved, partially approved, rejected, or sent for manual review."
+  }
+}
+
+{
+  "claim_id": "C004",
+  "employee": "Karan",
+  "decision": "Manual Review",
+  "approved_amount": 220,
+  "deductions_or_rejected_amount": 0,
+  "missing_documents": [],
+  "policy_references": "Mock Travel Reimbursement Policy",
+  "confidence": "medium",
+  "explanation": "Exception request requires manual review.",
+  "agentic_trace": {
+    "prompt": "You are a travel reimbursement approval agent. Review the claim for employee Karan in category conference with amount 220. Use the following tools in this sequence: policy_lookup, manual_review_check. Return a concise reasoning summary and a final decision.",
+    "selected_tools": [
+      "policy_lookup",
+      "manual_review_check"
+    ],
+    "conversation_flow": [
+      "1. Receive claim input",
+      "2. Select relevant tools based on claim context",
+      "3. Gather policy and evidence context",
+      "4. Decide and explain the outcome"
+    ],
+    "reasoning_summary": "Assess policy fit, confirm whether the receipt requirement is satisfied, and determine whether the case should be auto-approved, partially approved, rejected, or sent for manual review."
+  }
+}
+
+
+
+:~HCLTech_GenAI_Assignment_Ritik_Sharma$ python3 -m unittest discover -s tests -v
+test_decide_claim_includes_agentic_trace (test_agent.AgentBehaviorTests.test_decide_claim_includes_agentic_trace) ... ok
+test_prompt_layer_returns_agentic_trace (test_agent.AgentBehaviorTests.test_prompt_layer_returns_agentic_trace) ... ok
+test_select_tools_includes_receipt_check_when_receipt_missing (test_agent.AgentBehaviorTests.test_select_tools_includes_receipt_check_when_receipt_missing) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK
