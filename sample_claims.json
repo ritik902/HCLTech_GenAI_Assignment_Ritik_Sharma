@@ -1,0 +1,42 @@
+[
+  {
+    "claim_id": "C001",
+    "employee": "Asha",
+    "category": "transport",
+    "amount": 120,
+    "receipt_present": true,
+    "duplicate": false,
+    "exception_request": false,
+    "description": "Taxi for client meeting"
+  },
+  {
+    "claim_id": "C002",
+    "employee": "Ravi",
+    "category": "meals",
+    "amount": 85,
+    "receipt_present": false,
+    "duplicate": false,
+    "exception_request": false,
+    "description": "Dinner during overnight travel"
+  },
+  {
+    "claim_id": "C003",
+    "employee": "Meera",
+    "category": "lodging",
+    "amount": 650,
+    "receipt_present": true,
+    "duplicate": true,
+    "exception_request": false,
+    "description": "Hotel bill for conference"
+  },
+  {
+    "claim_id": "C004",
+    "employee": "Karan",
+    "category": "conference",
+    "amount": 220,
+    "receipt_present": true,
+    "duplicate": false,
+    "exception_request": true,
+    "description": "Conference registration with exception request"
+  }
+]

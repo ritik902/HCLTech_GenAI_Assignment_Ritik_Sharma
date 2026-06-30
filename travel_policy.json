@@ -1,0 +1,19 @@
+{
+  "policy_name": "Mock Travel Reimbursement Policy",
+  "max_per_diem": 100,
+  "approval_threshold": 500,
+  "receipt_requirement_threshold": 50,
+  "category_limits": {
+    "meals": 60,
+    "transport": 200,
+    "lodging": 300,
+    "conference": 250
+  },
+  "allowed_categories": ["meals", "transport", "lodging", "conference"],
+  "manual_review_triggers": [
+    "missing_receipt",
+    "duplicate_claim",
+    "exception_request",
+    "high_amount"
+  ]
+}
